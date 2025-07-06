@@ -32,11 +32,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
      */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        // 🧩 Define la URL para conectarse vía WebSocket (STOMP)
+        // 🧩 Define la URL para conectarse vía WebSocket
         // Ej: ws://localhost:8080/ws-alertas
-        // El `.withSockJS()` permite compatibilidad con navegadores antiguos (fallbacks)
         registry.addEndpoint("/ws-alertas")
-                .setAllowedOriginPatterns("*") // 🔓 Permite cualquier origen (cuidado en producción)
+                .setAllowedOriginPatterns("*") // 🔓 Permite cualquier origen
                 .withSockJS();                 // Habilita soporte para SockJS
     }
 }

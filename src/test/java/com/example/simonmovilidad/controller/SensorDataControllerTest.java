@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 import java.util.Optional;
 
@@ -29,6 +30,9 @@ class SensorDataControllerTest {
 
     @Mock
     private SensorDataRepository sensorRepo;
+
+    @Mock
+    private SimpMessagingTemplate messagingTemplate;
 
     @Mock
     private AlertaRepository alertaRepo;
