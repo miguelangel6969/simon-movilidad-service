@@ -23,9 +23,6 @@ public class JwtFilter extends OncePerRequestFilter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
-        System.out.println("Método: " + req.getMethod());
-        System.out.println("Authorization: " + req.getHeader("Authorization"));
-
         // Permitir preflight sin bloquear
         if ("OPTIONS".equalsIgnoreCase(req.getMethod())) {
             res.setStatus(HttpServletResponse.SC_OK);
